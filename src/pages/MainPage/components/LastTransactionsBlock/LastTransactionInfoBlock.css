@@ -1,0 +1,15 @@
+.lastTransactionsHeader {
+  font-weight: 800;
+  padding-top: 16px;
+}
+
+.lastTransactionsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .lastTransactionsHeader {
+    font-weight: 800;
+    padding-top: 16px;
+  }
+}
