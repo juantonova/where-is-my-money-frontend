@@ -1,0 +1,12 @@
+.logo {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  font-weight: 800;
+  line-height: 35px;
+  font-size: 28px;
+
+  .logoIcon {
+    color: #f5c754;
+  }
+}

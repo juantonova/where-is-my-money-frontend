@@ -1,0 +1,18 @@
+.buttonsBlock {
+    display: flex;
+    gap: 12px;
+
+    .button {
+        font-weight: 800;
+        border: none;
+        width: 160px;
+    }
+
+    .orange {
+        background-color: #f5c754;
+    }
+
+    .gray {
+        background-color: #E3E8F2;
+    }
+}

@@ -1,0 +1,7 @@
+.loadingSpin {
+  width: fit-content;
+
+  .loadingIcon {
+    color: #f5c754;
+  }
+}
