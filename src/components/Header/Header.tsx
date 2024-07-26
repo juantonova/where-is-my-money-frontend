@@ -14,7 +14,7 @@ type MenuItemType = Required<MenuProps>["items"][number];
 const items: MenuItemType[] = [
   {
     label: "Home",
-    key: "home",
+    key: "/",
     icon: <HomeOutlined />,
   },
   {
@@ -24,7 +24,7 @@ const items: MenuItemType[] = [
   },
   {
     label: "Transactions",
-    key: "transactions",
+    key: "/transactions",
     icon: <TransactionOutlined />,
   },
   {
@@ -38,13 +38,12 @@ const Header: React.FC = () => {
   const [current, setCurrent] = useState("mail");
 
   const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e);
+    window.location.assign(e.key);
     setCurrent(e.key);
   };
 
   return (
     <Menu
-      className="headerMenu"
       onClick={onClick}
       selectedKeys={[current]}
       mode="horizontal"

@@ -49,7 +49,6 @@ export type User = {
   name: string | null;
 };
 
-
 export const enum AppRoutes {
   HOME = "/",
   ACCOUNTS = "/accounts",

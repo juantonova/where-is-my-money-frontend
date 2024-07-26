@@ -1,4 +1,4 @@
-import { Transaction } from "../components/models/common";
+import { Transaction } from "../models/common";
 import { ApiService } from "./ApiService";
 
 const TRANSACTIONS_URL = "/transactions";

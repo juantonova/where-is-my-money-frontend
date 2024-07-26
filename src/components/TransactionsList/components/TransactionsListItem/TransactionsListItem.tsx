@@ -1,22 +1,19 @@
 import React from "react";
-import {
-  Transaction,
-  TransactionType,
-} from "../../../../../components/models/common";
 import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
 
-import "./LastTransactionsItem.css";
-import { addThousandSeparators } from "../../../../../utils/addThousandSeparators";
+import "./TransactionsListItem.css";
+import { Transaction, TransactionType } from "../../../../models/common";
+import { addThousandSeparators } from "../../../../utils/addThousandSeparators";
 
 type Props = {
   transaction: Transaction;
 };
 
-const LastTransactionsItem: React.FC<Props> = ({ transaction }) => {
+const TransactionsListItem: React.FC<Props> = ({ transaction }) => {
   const { sum, name, type } = transaction;
 
   return (
-    <div className="lastTransactionItemWrapper">
+    <div className="transactionItemWrapper">
       <div className="icon">
         {type === TransactionType.REVENUE ? (
           <ArrowUpOutlined />
@@ -32,4 +29,4 @@ const LastTransactionsItem: React.FC<Props> = ({ transaction }) => {
   );
 };
 
-export default LastTransactionsItem;
+export default TransactionsListItem;

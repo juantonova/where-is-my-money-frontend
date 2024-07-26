@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { Transaction } from "../components/models/common";
+import { Transaction } from "../models/common";
 import TransactionsApiService from "../api/TransactionsApiService";
 
 type State = {
