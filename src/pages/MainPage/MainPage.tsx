@@ -1,3 +1,4 @@
+// @ts-expect-error use react
 import React, { useEffect } from "react";
 import BalanceBlock from "./components/BalanceBlock";
 

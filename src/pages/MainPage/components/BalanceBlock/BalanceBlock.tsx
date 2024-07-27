@@ -1,3 +1,4 @@
+// @ts-expect-error use react
 import React from "react";
 import "./BalanceBlock.css";
 import useAccountsInfoStore from "../../../../stores/AccountsStore";

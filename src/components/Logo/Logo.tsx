@@ -1,3 +1,4 @@
+// @ts-expect-error use react
 import React from "react";
 import "./Logo.css";
 import { PayCircleOutlined } from "@ant-design/icons";

@@ -1,3 +1,4 @@
+// @ts-expect-error use react
 import React from "react";
 
 import "./App.css";

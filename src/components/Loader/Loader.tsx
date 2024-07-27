@@ -1,3 +1,5 @@
+
+// @ts-expect-error use react
 import React from "react";
 
 import { LoadingOutlined } from "@ant-design/icons";
