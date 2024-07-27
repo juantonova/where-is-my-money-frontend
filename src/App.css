@@ -4,3 +4,8 @@
   margin: 0 auto;
   padding: 2rem;
 }
+
+.header {
+  font-weight: 800;
+  padding: 16px 0;
+}

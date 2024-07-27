@@ -1,4 +1,4 @@
-import { Account } from "../components/models/common";
+import { Account } from "../models/common";
 import { ApiService } from "./ApiService";
 
 const ACCOUNTS_URL = "/accounts";

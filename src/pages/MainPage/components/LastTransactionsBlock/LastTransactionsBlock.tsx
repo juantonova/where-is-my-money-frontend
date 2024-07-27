@@ -1,9 +1,7 @@
 import React from "react";
 import useTransactionsInfoStore from "../../../../stores/TransactionsStore";
-import LastTransactionsItem from "./components/LastTransactionsItem";
 
-import "./LastTransactionInfoBlock.css";
-import Loader from "../../../../components/Loader";
+import TransactionsList from "../../../../components/TransactionsList";
 
 const LastTransactionsBlock = () => {
   const { transactions, isTransactionsLoading } = useTransactionsInfoStore();
@@ -11,18 +9,12 @@ const LastTransactionsBlock = () => {
   const lastTransactions = transactions.slice(-3);
 
   return (
-    <div className="lastTransactionsWrapper">
-      <div className="lastTransactionsHeader">Last Transactions</div>
-      {isTransactionsLoading ? (
-        <Loader />
-      ) : (
-        lastTransactions.map((transaction) => (
-          <LastTransactionsItem
-            key={transaction.id}
-            transaction={transaction}
-          />
-        ))
-      )}
+    <div>
+      <div className="header">Last Transactions</div>
+      <TransactionsList
+        transactions={lastTransactions}
+        isLoading={isTransactionsLoading}
+      />
     </div>
   );
 };

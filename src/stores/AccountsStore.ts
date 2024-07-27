@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import AccountsApiService from "../api/AccountsApiService";
-import { Account } from "../components/models/common";
+import { Account } from "../models/common";
 import { addThousandSeparators } from "../utils/addThousandSeparators";
 
 const calculateAccountsSum = (accounts: Account[]) => {

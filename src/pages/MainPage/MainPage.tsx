@@ -7,14 +7,17 @@ import useTransactionsInfoStore from "../../stores/TransactionsStore";
 import { USER_ID } from "../../consts";
 import LastTransactionsBlock from "./components/LastTransactionsBlock";
 import ButtonsBlock from "./components/ButtonsBlock";
+import useCategoriesInfoStore from "../../stores/CategoriesStore";
 
 function MainPage() {
   const { getAccounts } = useAccountsInfoStore();
   const { getTransactions } = useTransactionsInfoStore();
+  const { getCategories } = useCategoriesInfoStore();
 
   useEffect(() => {
     getAccounts(USER_ID);
     getTransactions(USER_ID);
+    getCategories(USER_ID);
   }, []);
 
   return (
