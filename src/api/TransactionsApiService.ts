@@ -17,6 +17,21 @@ class TransactionsApiService extends ApiService {
       return [];
     }
   };
+
+  createTransaction = async (data: Omit<Transaction, "id">) => {
+    try {
+      const {
+        data: { transaction },
+      } = await this.fetch<{ transaction: Transaction }>(TRANSACTIONS_URL, {
+        method: "POST",
+        data,
+      });
+      return transaction;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  };
 }
 
 export default new TransactionsApiService();
