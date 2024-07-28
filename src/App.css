@@ -2,7 +2,12 @@
   min-width: 360px;
   max-width: 460px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem;
+  min-height: 100%;
+}
+
+.app {
+  min-height: 100%;
 }
 
 .header {

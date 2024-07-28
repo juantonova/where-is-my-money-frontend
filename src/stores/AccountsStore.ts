@@ -16,6 +16,7 @@ type State = {
 
 type Action = {
   getAccounts: (userId: string) => Promise<void>;
+  createAccount: (account: Omit<Account, "id">) => Promise<boolean>
 };
 
 const useAccountsInfoStore = create<State & Action>((set) => ({
@@ -32,6 +33,10 @@ const useAccountsInfoStore = create<State & Action>((set) => ({
       accountSum: calculateAccountsSum(accounts),
       isAccountsLoading: false,
     }));
+  },
+  createAccount: async (accountData: Omit<Account, "id">) => {
+    const newAccount = await AccountsApiService.createAccount(accountData);
+    return !!newAccount;
   },
 }));
 

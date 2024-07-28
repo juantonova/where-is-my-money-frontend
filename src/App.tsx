@@ -10,6 +10,10 @@ import { AppRoutes } from "./models/common";
 import Logo from "./components/Logo/Logo";
 import TransactionsPage from "./pages/TransactionsPage";
 import TransactionCreateModal from "./components/TransactionCreateModal";
+import AccountsPage from "./pages/AccountsPage/AccountsPage";
+
+import "./App.css";
+import AccountCreateModal from "./components/AccountCreateModal";
 
 const router = createBrowserRouter([
   {
@@ -20,15 +24,20 @@ const router = createBrowserRouter([
     path: AppRoutes.TRANSACTIONS,
     element: <TransactionsPage />,
   },
+  {
+    path: AppRoutes.ACCOUNTS,
+    element: <AccountsPage />,
+  },
 ]);
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Logo />
       <RouterProvider router={router} />
       <Header />
       <TransactionCreateModal />
+      <AccountCreateModal />
     </div>
   );
 }
