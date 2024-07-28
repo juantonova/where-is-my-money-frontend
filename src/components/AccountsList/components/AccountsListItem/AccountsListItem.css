@@ -1,0 +1,25 @@
+.accountItemWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .accountInfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .categoryInfo {
+    color: #405473;
+    font-size: 12px;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e3e8f2;
+    height: 48px;
+    width: 48px;
+    border-radius: 8px;
+  }
+}

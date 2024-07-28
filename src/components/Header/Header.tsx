@@ -3,7 +3,6 @@ import {
   HomeOutlined,
   AccountBookOutlined,
   TransactionOutlined,
-  GoldOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
@@ -23,14 +22,9 @@ const items: MenuItemType[] = [
     icon: <AccountBookOutlined />,
   },
   {
-    label: "Transactions",
+    label: "Money",
     key: "/transactions",
     icon: <TransactionOutlined />,
-  },
-  {
-    label: "Categories",
-    key: "categories",
-    icon: <GoldOutlined />,
   },
 ];
 

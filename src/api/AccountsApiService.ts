@@ -17,6 +17,21 @@ class AccountsApiService extends ApiService {
       return [];
     }
   };
+
+  createAccount = async (data: Omit<Account, "id">) => {
+    try {
+      const {
+        data: { account },
+      } = await this.fetch<{ account: Account }>(ACCOUNTS_URL, {
+        method: "POST",
+        data,
+      });
+      return account;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  };
 }
 
 export default new AccountsApiService();
