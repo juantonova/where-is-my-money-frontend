@@ -16,12 +16,14 @@ import {
   getAccountsOptions,
   getCategoriesOptions,
 } from "../../transactionInfoUtils";
+import useTransactionsInfoStore from "../../../../stores/TransactionsStore";
 
 type FieldType = Omit<Transaction, "id">;
 
 const TransactionCreateFormFields: React.FC = () => {
   const { categories } = useCategoriesInfoStore();
   const { accounts } = useAccountsInfoStore();
+  const { isTransactionCreateLoading } = useTransactionsInfoStore();
 
   const [transactionType, setTransactionType] = useState(
     TransactionType.EXPENSE,
@@ -73,7 +75,11 @@ const TransactionCreateFormFields: React.FC = () => {
         <Input />
       </Form.Item>
       <Form.Item key="submit" style={{ textAlign: "end" }}>
-        <Button type="primary" htmlType="submit">
+        <Button
+          type="primary"
+          htmlType="submit"
+          loading={isTransactionCreateLoading}
+        >
           Send
         </Button>
       </Form.Item>

@@ -1,17 +1,13 @@
 import React from "react";
 
-import {
-  Button,
-  Form,
-  Input,
-  InputNumber,
-  Radio,
-} from "antd";
+import { Button, Form, Input, InputNumber, Radio } from "antd";
 import { Account, AccountType } from "../../../../models/common";
+import useAccountsInfoStore from "../../../../stores/AccountsStore";
 
 type FieldType = Omit<Account, "id">;
 
 const AccountCreateFormFields: React.FC = () => {
+  const { isAccountCreateLoading } = useAccountsInfoStore();
   return (
     <>
       <Form.Item<FieldType>
@@ -36,7 +32,11 @@ const AccountCreateFormFields: React.FC = () => {
         <Input />
       </Form.Item>
       <Form.Item key="submit" style={{ textAlign: "end" }}>
-        <Button type="primary" htmlType="submit">
+        <Button
+          type="primary"
+          htmlType="submit"
+          loading={isAccountCreateLoading}
+        >
           Send
         </Button>
       </Form.Item>

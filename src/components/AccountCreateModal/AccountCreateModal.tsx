@@ -16,7 +16,7 @@ type FieldType = Omit<Account, "id">;
 const AccountCreateModal: React.FC = () => {
   const { isAccountCreateModalOpen, setIsAccountCreateModalOpen } =
     useModalsStore();
-  const { createAccount, getAccounts } = useAccountsInfoStore()
+  const { createAccount, getAccounts } = useAccountsInfoStore();
 
   const [messageApi, contextHolder] = message.useMessage();
   const handleSuccess = () => messageApi.open(CREATE_ACCOUNT_SUCCESS_MESSAGE);
@@ -28,7 +28,7 @@ const AccountCreateModal: React.FC = () => {
     createAccount({
       ...e,
       user_id: Number(USER_ID),
-      currency: Currency.RUBLE
+      currency: Currency.RUBLE,
     }).then((result: boolean) => {
       result ? handleSuccess() : handleError();
       setIsAccountCreateModalOpen(false);

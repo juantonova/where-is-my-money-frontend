@@ -6,7 +6,7 @@ import TransactionsList from "../../components/TransactionsList";
 import { TransactionType } from "../../models/common";
 import Header from "../../components/Header";
 
-import "./TransactionPage.css"
+import "./TransactionPage.css";
 
 const TransactionsPage = () => {
   const { getTransactions, transactions, isTransactionsLoading } =
@@ -26,20 +26,20 @@ const TransactionsPage = () => {
   return (
     <div className="wrapperWithHeader">
       <div className="transactionPageWrapper">
-      <div>
-        <div className="header">Incomes</div>
-        <TransactionsList
-          transactions={incomes}
-          isLoading={isTransactionsLoading}
-        />
-      </div>
-      <div>
-        <div className="header">Expenses</div>
-        <TransactionsList
-          transactions={expenses}
-          isLoading={isTransactionsLoading}
-        />
-      </div>
+        <div>
+          <div className="header">Incomes</div>
+          <TransactionsList
+            transactions={incomes}
+            isLoading={isTransactionsLoading}
+          />
+        </div>
+        <div>
+          <div className="header">Expenses</div>
+          <TransactionsList
+            transactions={expenses}
+            isLoading={isTransactionsLoading}
+          />
+        </div>
       </div>
       <Header />
     </div>

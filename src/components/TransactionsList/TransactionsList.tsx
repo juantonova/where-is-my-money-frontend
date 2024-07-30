@@ -12,7 +12,6 @@ type Props = {
 };
 
 const TransactionsList: React.FC<Props> = ({ transactions, isLoading }) => {
-
   return isLoading ? (
     <Loader />
   ) : (

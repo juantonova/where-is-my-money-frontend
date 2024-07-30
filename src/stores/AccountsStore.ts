@@ -10,19 +10,21 @@ const calculateAccountsSum = (accounts: Account[]) => {
 
 type State = {
   isAccountsLoading: boolean;
+  isAccountCreateLoading: boolean;
   accounts: Account[];
   accountSum: string;
 };
 
 type Action = {
   getAccounts: (userId: string) => Promise<void>;
-  createAccount: (account: Omit<Account, "id">) => Promise<boolean>
+  createAccount: (account: Omit<Account, "id">) => Promise<boolean>;
 };
 
 const useAccountsInfoStore = create<State & Action>((set) => ({
   accounts: [],
   accountSum: "-",
   isAccountsLoading: false,
+  isAccountCreateLoading: false,
   getAccounts: async (userId: string) => {
     set(() => ({
       isAccountsLoading: true,
@@ -35,7 +37,13 @@ const useAccountsInfoStore = create<State & Action>((set) => ({
     }));
   },
   createAccount: async (accountData: Omit<Account, "id">) => {
+    set(() => ({
+      isAccountCreateLoading: true,
+    }));
     const newAccount = await AccountsApiService.createAccount(accountData);
+    set(() => ({
+      isAccountCreateLoading: false,
+    }));
     return !!newAccount;
   },
 }));

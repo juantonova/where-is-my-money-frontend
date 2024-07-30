@@ -32,7 +32,7 @@ const items: MenuItemType[] = [
 const Header: React.FC = () => {
   const [current, setCurrent] = useState("mail");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const onClick: MenuProps["onClick"] = (e) => {
     navigate(e.key);

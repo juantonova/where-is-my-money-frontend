@@ -4,6 +4,7 @@ import TransactionsApiService from "../api/TransactionsApiService";
 
 type State = {
   isTransactionsLoading: boolean;
+  isTransactionCreateLoading: boolean;
   transactions: Transaction[];
 };
 
@@ -15,6 +16,7 @@ type Action = {
 const useTransactionsInfoStore = create<State & Action>((set) => ({
   transactions: [],
   isTransactionsLoading: false,
+  isTransactionCreateLoading: false,
 
   getTransactions: async (userId: string) => {
     set(() => ({
@@ -30,14 +32,21 @@ const useTransactionsInfoStore = create<State & Action>((set) => ({
   },
 
   createTransaction: async (transactionData: Omit<Transaction, "id">) => {
+    set(() => ({
+      isTransactionCreateLoading: true,
+    }));
     const newTransaction =
       await TransactionsApiService.createTransaction(transactionData);
     if (newTransaction) {
       set(({ transactions }) => ({
         transactions: [...transactions, newTransaction],
+        isTransactionCreateLoading: false,
       }));
       return true;
     }
+    set(() => ({
+      isTransactionCreateLoading: false,
+    }));
     return false;
   },
 }));

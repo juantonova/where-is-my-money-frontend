@@ -16,13 +16,13 @@ const AccountsPage = () => {
 
   return (
     <div className="wrapperWithHeader">
-    <div className="accountsPageWrapper">
-      <div>
-        <div className="header">Accounts</div>
-        <AccountsList accounts={accounts} isLoading={isAccountsLoading} />
+      <div className="accountsPageWrapper">
+        <div>
+          <div className="header">Accounts</div>
+          <AccountsList accounts={accounts} isLoading={isAccountsLoading} />
+        </div>
       </div>
-    </div>
-    <Header />
+      <Header />
     </div>
   );
 };
