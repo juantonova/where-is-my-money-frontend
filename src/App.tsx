@@ -3,7 +3,6 @@ import React from "react";
 
 import "./App.css";
 
-import Header from "./components/Header";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainPage from "./pages/MainPage/MainPage";
 import { AppRoutes } from "./models/common";
@@ -35,7 +34,7 @@ function App() {
     <div className="app">
       <Logo />
       <RouterProvider router={router} />
-      <Header />
+
       <TransactionCreateModal />
       <AccountCreateModal />
     </div>

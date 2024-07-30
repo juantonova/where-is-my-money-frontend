@@ -9,6 +9,7 @@ import { USER_ID } from "../../consts";
 import LastTransactionsBlock from "./components/LastTransactionsBlock";
 import ButtonsBlock from "./components/ButtonsBlock";
 import useCategoriesInfoStore from "../../stores/CategoriesStore";
+import Header from "../../components/Header";
 
 function MainPage() {
   const { getAccounts } = useAccountsInfoStore();
@@ -22,12 +23,13 @@ function MainPage() {
   }, []);
 
   return (
-    <div>
+    <div className="wrapperWithHeader">
       <div className="mainPageWrapper">
         <BalanceBlock />
         <ButtonsBlock />
         <LastTransactionsBlock />
       </div>
+      <Header />
     </div>
   );
 }

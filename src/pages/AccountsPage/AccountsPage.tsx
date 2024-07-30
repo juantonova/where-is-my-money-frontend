@@ -5,6 +5,7 @@ import useAccountsInfoStore from "../../stores/AccountsStore";
 import AccountsList from "../../components/AccountsList";
 
 import "./AccountsPage.css";
+import Header from "../../components/Header";
 
 const AccountsPage = () => {
   const { getAccounts, accounts, isAccountsLoading } = useAccountsInfoStore();
@@ -14,11 +15,14 @@ const AccountsPage = () => {
   }, []);
 
   return (
+    <div className="wrapperWithHeader">
     <div className="accountsPageWrapper">
       <div>
         <div className="header">Accounts</div>
         <AccountsList accounts={accounts} isLoading={isAccountsLoading} />
       </div>
+    </div>
+    <Header />
     </div>
   );
 };

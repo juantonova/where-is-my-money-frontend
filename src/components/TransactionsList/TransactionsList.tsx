@@ -12,13 +12,12 @@ type Props = {
 };
 
 const TransactionsList: React.FC<Props> = ({ transactions, isLoading }) => {
-  const lastTransactions = transactions.slice(-3);
 
   return isLoading ? (
     <Loader />
   ) : (
     <div className="transactionsList">
-      {lastTransactions.map((transaction) => (
+      {transactions.map((transaction) => (
         <TransactionsListItem key={transaction.id} transaction={transaction} />
       ))}
     </div>

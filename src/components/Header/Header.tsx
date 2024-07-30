@@ -7,6 +7,7 @@ import {
 import type { MenuProps } from "antd";
 import { Menu } from "antd";
 import "./Header.css";
+import { useNavigate } from "react-router-dom";
 
 type MenuItemType = Required<MenuProps>["items"][number];
 
@@ -18,7 +19,7 @@ const items: MenuItemType[] = [
   },
   {
     label: "Accounts",
-    key: "accounts",
+    key: "/accounts",
     icon: <AccountBookOutlined />,
   },
   {
@@ -31,8 +32,10 @@ const items: MenuItemType[] = [
 const Header: React.FC = () => {
   const [current, setCurrent] = useState("mail");
 
+  const navigate = useNavigate()
+
   const onClick: MenuProps["onClick"] = (e) => {
-    window.location.assign(e.key);
+    navigate(e.key);
     setCurrent(e.key);
   };
 
